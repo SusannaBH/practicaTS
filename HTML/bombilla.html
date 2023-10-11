@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Bombilla</title>
+    <link rel="stylesheet" href="/CSS/styleBombilla.css">
+</head>
+<body>
+    <header>
+        <h1>~ JUEGA CON LA BOMBILLA ~</h1>
+        <img src="/IMAGES/boff.jpg" alt="INTERRUPTOR" id="switch" class="botton">
+    </header>
+    <main>
+        <nav>
+            <div>
+                <h4>Luminosidad</h4>
+                <input class="luminosidad" id="barraLuminosidad" type="range" min="1" max="10" step="1" value="0"></input>
+            </div>
+            <div>
+                <h4>Rotación</h4>
+                <input class="rotacion" id="barraRotacion" type="range" min="1" max="10" step="1" value="0"></input> 
+            </div>
+            <div>
+                <h4>Tamaño</h4>
+                <input class="tamaño" id="barraTamaño" type="range" min="1" max="10" step="1" value="0"></input> 
+            </div>
+        </nav>
+        <img src="/IMAGES/off.jpg" alt="BOMBILLA" id="lightbulb">
+    </main>
+    <script src="/JS/bombilla.js"></script>
+</body>
+</html>
