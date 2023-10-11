@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+    background-color: darkgoldenrod;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkkhaki;
+}
+img{
+    height: 60vh;
+    margin: 20px;
+}

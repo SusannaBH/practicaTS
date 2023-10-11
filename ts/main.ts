@@ -3,3 +3,4 @@ function saludar(name:string):string {
 }
 
 console.log(saludar("Susana"));
+
