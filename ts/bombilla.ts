@@ -38,5 +38,5 @@ sizeEl.addEventListener('change', () => {
 lightEl.addEventListener('change', () => {
     if(!on) return;
     const value = lightEl.value;
-    bombilla_1_El.style.opacity =  value;
+    bombilla_1_El.style.opacity =  value; 
 });
