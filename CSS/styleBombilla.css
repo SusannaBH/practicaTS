@@ -5,10 +5,11 @@ body{
 }
 header{
     color: aquamarine;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     height: 50px;
     display: flex;
     justify-content: space-around;
+    font-size: 1rem;
 }
 header > img{
     height: 15vh;
@@ -32,8 +33,19 @@ main{
     display: flex;
     justify-content: space-around;
 }
-main > img{
+.containerLight{
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
-    width: 50vw;
+}
+.bombilla{
+    position: absolute;
+    top: 0;
+    left: 30%;
+    z-index: -1;
+    transition: all 1s;
+}
+.bombilla-fondo{
+    z-index: -2;
 }

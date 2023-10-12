@@ -8,25 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>~ JUEGA CON LA BOMBILLA ~</h1>
         <img src="/IMAGES/boff.jpg" alt="INTERRUPTOR" id="switch" class="botton">
+        <h1>~ JUEGA CON LA BOMBILLA ~</h1>
     </header>
     <main>
         <nav>
             <div>
                 <h4>Luminosidad</h4>
-                <input class="luminosidad" id="barraLuminosidad" type="range" min="1" max="10" step="1" value="0"></input>
+                <input class="luminosidad" id="barraLuminosidad" type="range" min="0" max="1" step="0.01" value="1"></input>
             </div>
             <div>
                 <h4>Rotación</h4>
-                <input class="rotacion" id="barraRotacion" type="range" min="1" max="10" step="1" value="0"></input> 
+                <input class="rotacion" id="barraRotacion" type="range" min="0" max="360" step="0.01" value="0"></input> 
             </div>
             <div>
                 <h4>Tamaño</h4>
-                <input class="tamaño" id="barraTamaño" type="range" min="1" max="10" step="1" value="0"></input> 
+                <input class="tamaño" id="barraTamaño" type="range" min="40" max="100" step="0.01" value="40"></input> 
             </div>
         </nav>
-        <img src="/IMAGES/off.jpg" alt="BOMBILLA" id="lightbulb">
+        <div class="containerLight">
+            <img src="/IMAGES/off.jpg" alt="BOMBILLA" class="bombilla">
+            <img src="/IMAGES/off.jpg" alt="BOMBILLA" class="bombilla bombilla-fondo">
+        </div>
     </main>
     <script src="/JS/bombilla.js"></script>
 </body>
