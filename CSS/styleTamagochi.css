@@ -1,0 +1,72 @@
+body{
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+        "comida ocio"
+        "deporte descanso";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    height: 100vh;
+    margin: 0;
+}
+.containerGeneral{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+}
+.dog{
+    height: 40vh;
+}
+.containerGreen{
+    grid-area: comida;
+    background-color: springgreen;
+    display: flex;
+}
+.containerYellow{
+    grid-area: ocio;
+    background-color: khaki;
+    display: flex;
+    justify-content: end;
+}
+.containerBlue{
+    grid-area: descanso;
+    background-color: aqua;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.containerRed{
+    grid-area: deporte;
+    background-color: salmon;
+    display: flex;
+    align-items: flex-end;
+}
+button{
+    border-radius: 100%;
+    margin: 5px;
+    width: 80px;
+    height: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button:hover{
+    border: dotted dimgray 5px;
+}
+progress[value] {
+    appearance: none;
+    margin: 10px;
+}
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 20px;
+    
+}
+progress::-webkit-progress-value {
+    background-color: purple;
+    border-radius: 20px;
+}

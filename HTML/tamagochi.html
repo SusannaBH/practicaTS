@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Tamagochi</title>
+    <link rel="stylesheet" href="/CSS/styleTamagochi.css">
+</head>
+<body>
+    <section class="containerGeneral">
+        <p><b>LOKI</b></p>
+        <img src="/IMAGES/dogSad.png" alt="imageDog" class="dog" id="dog">
+        <progress id="total" max="100" value="0"></progress>
+    </section>
+    <section class="containerGreen">
+        <button id="bone">🦴 HUESO</button>
+        <button id="bacon">🥓 BACON</button>
+        <button id="fillet">🥩 FILETE</button>
+        <progress id="eat" max="100" value="0"></progress>
+    </section>
+    <section class="containerYellow">
+        <progress id="play" max="100" value="0"></progress>
+        <button id="smallBall">🥎 MINI-PELOTA</button>
+        <button id="frisbee">🥏 FRISBEE</button>
+        <button id="bigBall">⚽ GRAN-PELOTA</button>
+    </section>
+    <section class="containerBlue">
+        <progress id="sleep" max="100" value="0"></progress>
+        <button id="bed">🛏️ DORMIR NOCHE</button>
+        <button id="couch">🛋️ DORMIR SIESTA</button>
+    </section>
+    <section class="containerRed">
+        <button id="walk">🐕‍🦺 PASEO CON DUEÑO</button>
+        <button id="playDogs">🐩 JUGAR CON PERROS</button>
+        <progress id="fight" max="100" value="0"></progress>
+    </section>
+    <script src="/js/tamagochi.js"></script>
+</body>
+</html>
