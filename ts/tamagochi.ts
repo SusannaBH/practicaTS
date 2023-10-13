@@ -18,32 +18,32 @@ const walkEl = document.getElementById('walk') as HTMLButtonElement;
 const playDogsEl = document.getElementById('playDogs') as HTMLButtonElement;
 //IMAGEN PERRO
 const dogEl = document.getElementById('dog') as HTMLImageElement;
-
 //VARIABLE
-let totalValue = 0;
+let totalValue = totalEl.value;
+let eatValue = eatEl.value;
+let sleepValue = sleepEl.value;
+let playValue = playEl.value;
+let fightValue  = fightEl.value;
 
 //FUNCION para ajustar valores de los "progress"
 function adjustValueEat() {
-    const eatValue = eatEl.value;
-    totalValue = eatValue * 0.50; //25%
-    totalEl.value = totalValue;
+    eatValue = eatEl.value;
+    totalEl.value = (eatValue + sleepValue - fightValue - playValue) * 0.5;
 }
 function adjustValuePlay() {
-    const playValue = playEl.value;
-    totalValue = playValue * 0.50;
-    totalEl.value = totalValue;
+    playValue = playEl.value;
+    totalEl.value = (eatValue + sleepValue - fightValue - playValue) * 0.5;
 }
 function adjustValueSleep() {
-    const sleepValue = sleepEl.value;
-    totalValue = sleepValue * 0.50;
-    totalEl.value = totalValue;
+    sleepValue = sleepEl.value;
+    totalEl.value = (eatValue + sleepValue - fightValue - playValue) * 0.5;
 }
 function adjustValueFight() {
-    const fightValue = fightEl.value;
-    totalValue = fightValue * 0.50;
-    totalEl.value = totalValue;
+    fightValue = fightEl.value;
+    totalEl.value = (eatValue + sleepValue - fightValue - playValue) * 0.5;
 }
 function adjustImage() {
+    const totalValue = totalEl.value;
     if (totalValue >= 50){
         dogEl.src = "/IMAGES/dogHappy.png";
     }
