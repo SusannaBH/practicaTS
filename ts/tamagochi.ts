@@ -26,24 +26,24 @@ let playValue = playEl.value;
 let fightValue  = fightEl.value;
 
 //FUNCION para ajustar valores de los "progress"
-function adjustValueEat() {
+function adjustValueEat(val: number) {
     eatValue = eatEl.value;
-    totalEl.value = (totalEl.value + eatValue) / 2;
+    totalEl.value = totalEl.value + val / 2;
 
 }
-function adjustValuePlay() {
+function adjustValuePlay(val: number) {
     playValue = playEl.value;
-    totalEl.value = (totalEl.value - playValue) / 2;
+    totalEl.value = totalEl.value - val / 2;
 
 }
-function adjustValueSleep() {
+function adjustValueSleep(val: number) {
     sleepValue = sleepEl.value;
-    totalEl.value = (totalEl.value + sleepValue) / 2;
+    totalEl.value = totalEl.value + val / 2;
 
 }
-function adjustValueFight() {
+function adjustValueFight(val: number) {
     fightValue = fightEl.value;
-    totalEl.value = (totalEl.value + fightValue) / 2;
+    totalEl.value = totalEl.value - val / 2;
 
 }
 function adjustImage() {
@@ -56,12 +56,12 @@ function adjustImage() {
 }
 
 function adjustPlayAndFight(value: number){
-    playEl.value = playEl.value - (value);
-    fightEl.value = fightEl.value - (value);
+    playEl.value = playEl.value - (value/4);
+    fightEl.value = fightEl.value - (value/4);
 }
 function adjustEatAndSleep(value: number){
-    eatEl.value = eatEl.value - (value);
-    sleepEl.value = sleepEl.value - (value);
+    eatEl.value = eatEl.value - (value/4);
+    sleepEl.value = sleepEl.value - (value/4);
 }
 
 //TODOS LOS EVENTOS EAT
@@ -70,7 +70,7 @@ boneEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 7, 100); //Asegurarse de que no supere 100
     eatEl.value = newValue;
-    adjustValueEat();
+    adjustValueEat(7);
     adjustImage();
     adjustPlayAndFight(newValue);
 });
@@ -79,7 +79,7 @@ baconEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 18, 100);
     eatEl.value = newValue;
-    adjustValueEat();
+    adjustValueEat(18);
     adjustImage();
     adjustPlayAndFight(newValue);
 });
@@ -88,7 +88,7 @@ filletEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 26, 100);
     eatEl.value = newValue;
-    adjustValueEat();
+    adjustValueEat(26);
     adjustImage();
     adjustPlayAndFight(newValue);
 });
@@ -98,7 +98,7 @@ smallBallEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 11, 100);
     playEl.value = newValue;
-    adjustValuePlay();
+    adjustValuePlay(11);
     adjustImage();
     adjustEatAndSleep(newValue);
 });
@@ -107,7 +107,7 @@ frisbeeEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 18, 100);
     playEl.value = newValue;
-    adjustValuePlay();
+    adjustValuePlay(18);
     adjustImage();
     adjustEatAndSleep(newValue);
 });
@@ -116,7 +116,7 @@ bigBallEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 23, 100);
     playEl.value = newValue;
-    adjustValuePlay();
+    adjustValuePlay(23);
     adjustImage();
     adjustEatAndSleep(newValue);
 });
@@ -126,7 +126,7 @@ bedEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 25, 100);
     sleepEl.value = newValue;
-    adjustValueSleep();
+    adjustValueSleep(25);
     adjustImage();
     adjustPlayAndFight(newValue);
 });
@@ -135,7 +135,7 @@ couchEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 15, 100);
     sleepEl.value = newValue;
-    adjustValueSleep();
+    adjustValueSleep(15);
     adjustImage();
     adjustPlayAndFight(newValue);
 });
@@ -145,7 +145,7 @@ walkEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 12, 100);
     fightEl.value = newValue;
-    adjustValueFight();
+    adjustValueFight(12);
     adjustImage();
     adjustEatAndSleep(newValue);
 });
@@ -154,9 +154,7 @@ playDogsEl.addEventListener('click', ()=>{
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 24, 100);
     fightEl.value = newValue;
-    adjustValueFight();
+    adjustValueFight(24);
     adjustImage();
     adjustEatAndSleep(newValue);
 });
-
-//document.addEventListener("DOMContentLoaded", () => totalEl.value = (eatValue + sleepValue - fightValue - playValue))
