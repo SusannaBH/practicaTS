@@ -1,0 +1,32 @@
+body{
+    background-color: darkgoldenrod;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+    color: sandybrown;
+}
+.section{
+    border: dotted 3px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: sandybrown;
+}
+.imagen{
+    margin: 10px;
+}
+.btn{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: orangered;
+    border-bottom: 3px double black;
+    height: 30px;
+    width: 90px;
+    color: white;
+}
+.texto{
+    width: 50vw;
+    height: auto;
+    border: double orangered 3px;
+    background-color: black;
+    color: white;
+}
