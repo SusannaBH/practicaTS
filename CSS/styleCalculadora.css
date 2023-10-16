@@ -2,6 +2,7 @@ main{
     margin: 50px;
     width: 400px;
     height: 600px;
+    padding-bottom: 20px;
     background-color: salmon;
     border-radius: 8%;
     border: solid black 3px;
