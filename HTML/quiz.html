@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Quiz</title>
+    <link rel="stylesheet" href="/CSS/styleQuiz.css">
+</head>
+<body>
+    <header>
+        <h1>¡RESPONDE LO QUE SEPAS!</h1>
+    </header>
+    <main>
+        <!-- PANTALLA INICIAL -->
+        <section id="pantalla1" class="pantalla1">
+            <button id="buttonPlay" onclick="comenzarJuego()">COMENZAR JUEGO</button>
+        </section>
+        <!-- PANTALLA JUEGO -->
+        <section id="pantalla2" class="pantalla2">
+            <h3 id="question">PREGUNTA</h3>
+            <div class="opciones">
+                <button id="answer1" class="opcion" onclick="comprobarRespuesta(0)">Respuesta1</button>
+                <button id="answer2" class="opcion" onclick="comprobarRespuesta(1)">Respuesta2</button>
+                <button id="answer3" class="opcion" onclick="comprobarRespuesta(2)">Respuesta3</button>
+                <button id="answer4" class="opcion" onclick="comprobarRespuesta(3)">Respuesta4</button>
+            </div>
+            <p><b>PUNTUACIÓN TOTAL: </b><span id="score">0</span> respuestas acertadas de 5 preguntas.</p>
+        </section>
+        <!-- PANTALLA FINAL -->
+        <section id="pantalla3" class="pantalla3">
+            <h2>CORRECTAS: <span class="acertadas">5</span></h2>
+            <h2>FALLADAS: <span class="falladas">0</span></h2>
+            <button id="buttonReset" onclick="volverAJugar()">VOLVER A JUGAR</button>
+        </section>
+        
+    </main>
+    <script src="/JS/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+body{
+    background-color: salmon;
+    font-family: 'Tilt Neon';
+}
+header{
+    background-color: aquamarine;
+    padding: 20px;
+    text-align: center;
+    color:coral;
+    border: solid 3px black;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/*PANTALLA INICIAL*/
+#pantalla1{
+    display: block;
+    text-align: center;
+}
+.pantalla1 > button{
+    height: 80px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-family: 'Tilt Neon';
+}
+.pantalla1 > button:hover{
+    border: 3px dashed darkcyan;
+    background-color: aquamarine;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+}
+.pantalla1 > button:active{
+    border: 3px solid darkcyan;
+}
+
+/*PANTALLA JUEGO*/
+#pantalla2{
+    display: none;
+    text-align: center;
+}
+.opciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.opcion{
+    height: 80px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-family: 'Tilt Neon';
+}
+.opcion:hover{
+    border: 3px dashed darkcyan;
+    background-color: aquamarine;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+}
+.opcion:active{
+    border: 3px solid darkcyan;
+}
+
+/*OPCIONES ACERTADAS - OPCIONES EQUIVOCADAS*/
+.opcion.acertada{
+    background-color: greenyellow;
+    font-size: 20px;
+}
+.opcion.fallada{
+    background-color: red;
+    font-size: 20px;
+}
+
+/*PANTALLA FINAL*/
+#pantalla3{
+    display: none;
+    text-align: center;
+}
+.acertadas{
+    background-color: greenyellow;
+    border-radius: 100px;
+    padding: 10px;
+}
+.falladas{
+    background-color: red;
+    border-radius: 100px;
+    padding: 10px;
+}
+.pantalla3> button{
+    height: 80px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-family: 'Tilt Neon';
+}
+.pantalla3> button:hover{
+    border: 3px dashed darkcyan;
+    background-color: aquamarine;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+}
+.pantalla3> button:active{
+    border: 3px solid darkcyan;
+}
+
+/*PANTALLA SCORE*/
+.sectionScore{
+    display: none;
+    text-align: center;
+    height: 100px;
+}
