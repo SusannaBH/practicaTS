@@ -24,27 +24,41 @@ let eatValue = eatEl.value;
 let sleepValue = sleepEl.value;
 let playValue = playEl.value;
 let fightValue  = fightEl.value;
+//CAMBIAR COLOR BARRAS
+const elements = [totalEl, eatEl, playEl, sleepEl, fightEl];
+function changeColor() {
+    elements.forEach((element) => {
+    const value = parseInt(element.getAttribute('value') || '0', 10);
+
+    if (value <= 50) {
+        console.log(element);
+        element.style.setProperty('--progress-value-color', 'red');
+    } else {
+        element.style.setProperty('--progress-value-color', 'greenyellow');
+    }
+});
+}
 
 //FUNCION para ajustar valores de los "progress"
 function adjustValueEat(val: number) {
     eatValue = eatEl.value;
     totalEl.value = totalEl.value + val / 2;
-
+    changeColor();
 }
 function adjustValuePlay(val: number) {
     playValue = playEl.value;
     totalEl.value = totalEl.value - val / 2;
-
+    changeColor();
 }
 function adjustValueSleep(val: number) {
     sleepValue = sleepEl.value;
     totalEl.value = totalEl.value + val / 2;
-
+    changeColor();
 }
 function adjustValueFight(val: number) {
     fightValue = fightEl.value;
     totalEl.value = totalEl.value - val / 2;
-
+    changeColor();
 }
 function adjustImage() {
     const totalValue = totalEl.value;
@@ -58,39 +72,41 @@ function adjustImage() {
 function adjustPlayAndFight(value: number){
     playEl.value = playEl.value - (value/4);
     fightEl.value = fightEl.value - (value/4);
+    changeColor();
 }
 function adjustEatAndSleep(value: number){
     eatEl.value = eatEl.value - (value/4);
     sleepEl.value = sleepEl.value - (value/4);
+    changeColor();
 }
 
 //TODOS LOS EVENTOS EAT
+//funcion enccapsula codigo EAT
+function enccapsula(valor_num:number,newValue:number){
+    adjustValueEat(valor_num );
+    adjustImage();
+    adjustPlayAndFight(newValue);
+}
 boneEl.addEventListener('click', ()=>{
     const oldValue = eatEl.value;
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 7, 100); //Asegurarse de que no supere 100
     eatEl.value = newValue;
-    adjustValueEat(7);
-    adjustImage();
-    adjustPlayAndFight(newValue);
+    enccapsula(7,newValue);
 });
 baconEl.addEventListener('click', ()=>{
     const oldValue = eatEl.value;
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 18, 100);
     eatEl.value = newValue;
-    adjustValueEat(18);
-    adjustImage();
-    adjustPlayAndFight(newValue);
+    enccapsula(18,newValue);
 });
 filletEl.addEventListener('click', ()=>{
     const oldValue = eatEl.value;
     if(oldValue === 100) return;
     const newValue = Math.min(oldValue + 26, 100);
     eatEl.value = newValue;
-    adjustValueEat(26);
-    adjustImage();
-    adjustPlayAndFight(newValue);
+    enccapsula(26,newValue);
 });
 //TODOS LOS EVENTOS PLAY
 smallBallEl.addEventListener('click', ()=>{
@@ -158,3 +174,4 @@ playDogsEl.addEventListener('click', ()=>{
     adjustImage();
     adjustEatAndSleep(newValue);
 });
+
