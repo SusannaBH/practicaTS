@@ -73,13 +73,17 @@ main{
     border: 3px solid darkcyan;
 }
 
-/*OPCIONES ACERTADAS - OPCIONES EQUIVOCADAS*/
+/*OPCIONES ACERTADAS - OPCIONES EQUIVOCADAS - OPCIONES SIN MARCAR*/
 .opcion.acertada{
     background-color: greenyellow;
     font-size: 20px;
 }
 .opcion.fallada{
     background-color: red;
+    font-size: 20px;
+}
+.opcion.normal{
+    background-color: white;
     font-size: 20px;
 }
 

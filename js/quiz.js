@@ -53,18 +53,22 @@ function changeQuestion() {
 //FUNCION COMPROBAR RESPUESTA
 function checkAnswer(opcionCheck) {
     let answerEl = document.getElementById('answer' + (opcionCheck + 1));
+    let answerAEl = document.getElementById('answer' + correctas[posicionActual]);
     if (answerEl && (opcionCheck + 1) == correctas[posicionActual]) { //ACIERTO
         answerEl.className = "opcion acertada";
         acertadas++;
     }
     else { //FALLO
         answerEl.className = "opcion fallada";
-        let answerAEl = document.getElementById('answer' + correctas[posicionActual]);
         answerAEl.className = "opcion acertada";
         falladas++;
     }
     posicionActual++;
-    setTimeout(changeQuestion, 1000);
+    setTimeout(function () {
+        answerEl.className = "opcion";
+        answerAEl.className = "opcion";
+        setTimeout(changeQuestion, 900);
+    }, 600);
 }
 //FUNCION PARA TERMINAR EL JUEGO
 function finishPlay() {
