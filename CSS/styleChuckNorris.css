@@ -1,4 +1,5 @@
 body{
+    min-width: 400px;
     background-color: darkgoldenrod;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -11,9 +12,14 @@ h1{
     justify-content: space-around;
     align-items: center;
     background-color: sandybrown;
+    gap: 10px;
+    padding: 30px;
+    margin: 20px;
 }
-.imagen{
-    margin: 10px;
+.imagen2{
+    width: 150px;
+    border-radius: 100px;
+    border: solid black 3px;
 }
 .btn{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

@@ -28,6 +28,9 @@ const pantalla3 = document.getElementById('pantalla3') as HTMLElement;
 
 //FUNCION COMENZAR JUEGO
 function startPlay(){
+    acertadas = 0;
+    falladas = 0;
+    posicionActual = 0;
     pantalla1.style.display = "none";
     pantalla2.style.display = "block";
     changeQuestion();
@@ -35,7 +38,12 @@ function startPlay(){
 
 //FUNCION CAMBIAR PREGUNTA
 function changeQuestion(){
-    
+    //VOLVER A PONER LAS RESPUESTAS EN BLANCO
+    const opcionesNoMetidasArriba = document.getElementsByClassName('opcion') as HTMLCollectionOf<HTMLButtonElement>;
+    for (const opctionNoMetidaArriba of opcionesNoMetidasArriba) {
+        opctionNoMetidaArriba.classList.remove('acertada'); //HACER REMOVE DE ACERTADA
+        opctionNoMetidaArriba.classList.remove('fallada'); //HACER REMOVE DE FALLADA
+    }
     //RESPUESTAS ACERTADAS EN PANTALLA JUEGO
     const scoreEl = document.getElementById('score') as HTMLSpanElement;
     scoreEl.innerText = acertadas.toString();
@@ -71,11 +79,7 @@ function checkAnswer(opcionCheck: number){
         falladas++;
     }
     posicionActual++;
-    setTimeout(function () {
-        answerEl.className = "opcion";
-        answerAEl.className = "opcion";
-        setTimeout(changeQuestion, 900);
-    }, 600);
+    setTimeout(changeQuestion, 900);
 }
 
 //FUNCION PARA TERMINAR EL JUEGO

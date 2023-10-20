@@ -24,12 +24,21 @@ const pantalla2 = document.getElementById('pantalla2');
 const pantalla3 = document.getElementById('pantalla3');
 //FUNCION COMENZAR JUEGO
 function startPlay() {
+    acertadas = 0;
+    falladas = 0;
+    posicionActual = 0;
     pantalla1.style.display = "none";
     pantalla2.style.display = "block";
     changeQuestion();
 }
 //FUNCION CAMBIAR PREGUNTA
 function changeQuestion() {
+    //VOLVER A PONER LAS RESPUESTAS EN BLANCO
+    const opcionesNoMetidasArriba = document.getElementsByClassName('opcion');
+    for (const opctionNoMetidaArriba of opcionesNoMetidasArriba) {
+        opctionNoMetidaArriba.classList.remove('acertada'); //HACER REMOVE DE ACERTADA
+        opctionNoMetidaArriba.classList.remove('fallada'); //HACER REMOVE DE FALLADA
+    }
     //RESPUESTAS ACERTADAS EN PANTALLA JUEGO
     const scoreEl = document.getElementById('score');
     scoreEl.innerText = acertadas.toString();
@@ -64,11 +73,7 @@ function checkAnswer(opcionCheck) {
         falladas++;
     }
     posicionActual++;
-    setTimeout(function () {
-        answerEl.className = "opcion";
-        answerAEl.className = "opcion";
-        setTimeout(changeQuestion, 900);
-    }, 600);
+    setTimeout(changeQuestion, 900);
 }
 //FUNCION PARA TERMINAR EL JUEGO
 function finishPlay() {
